@@ -11,6 +11,15 @@ import {
   Text,
   View
 } from 'react-native';
+import {
+  RTCPeerConnection,
+  RTCIceCandidate,
+  RTCSessionDescription,
+  RTCView,
+  MediaStream,
+  MediaStreamTrack,
+  getUserMedia
+} from 'react-native-webrtc';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,8 +28,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-
-export default class App extends Component.Component {
+export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
