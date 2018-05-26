@@ -3,6 +3,16 @@ import {
   View,
   Text,
 } from 'react-native';
+import {
+  RTCPeerConnection,
+  RTCIceCandidate,
+  RTCSessionDescription,
+  RTCView,
+  MediaStream,
+  MediaStreamTrack,
+  getUserMedia
+} from 'react-native-webrtc';
+
 
 export default class WebRTCQuickblox extends React.Component {
   constructor (props) {

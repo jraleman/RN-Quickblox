@@ -11,15 +11,8 @@ import {
   Text,
   View
 } from 'react-native';
-import {
-  RTCPeerConnection,
-  RTCIceCandidate,
-  RTCSessionDescription,
-  RTCView,
-  MediaStream,
-  MediaStreamTrack,
-  getUserMedia
-} from 'react-native-webrtc';
+
+import WebRTCQuickblox from './src/components/WebRTCQuickblox';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -29,18 +22,18 @@ const instructions = Platform.select({
 });
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    return ;
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <WebRTCQuickblox
+          pc={ "quickblox-peerConnection" }
+          config={ "quickblox-configuration" }
+        />
       </View>
     );
   }
