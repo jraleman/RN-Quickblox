@@ -4,15 +4,13 @@
  * @flow
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
-
-import WebRTCQuickblox from './src/components/WebRTCQuickblox';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,19 +19,20 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    return ;
-  }
+type Props = {};
+export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <WebRTCQuickblox
-          pc={ "quickblox-peerConnection" }
-          config={ "quickblox-configuration" }
-        />
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit App.js
+        </Text>
+        <Text style={styles.instructions}>
+          {instructions}
+        </Text>
       </View>
     );
   }
