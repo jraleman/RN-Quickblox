@@ -20,5 +20,13 @@ allprojects {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
         }
+        maven {
+            // Add jitpack repository (added by react-native-spinkit)
+            url "https://jitpack.io"
+        }
+        maven {
+            // Added by react-native-video-quickblox
+            url "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/"
+        }
     }
 }
