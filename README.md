@@ -170,11 +170,11 @@ This should generate `Podfile.lock` a `Pods/` folder and most importantly a `[na
 
 ### Be sure that you open and build from the .xcworkspace.
 
-After having opened your `.xcworkspace' in xcode:
+After having opened your `.xcworkspace` in xcode:
 1. Go to the project navigator
 2. Click on the project folder
-3. On the right side locate the 'Build Phases' tab.
-4. Install the following libraries by clicking on the '+' button.
+3. On the right side locate the **Build Phases** tab.
+4. Install the following libraries by clicking on the **+** button.
 ```
 libicucore.dylib
 libc++.dylib
@@ -189,21 +189,21 @@ VideoToolbox.framework
 Accelerate.framework
 ```
 
-![Picture of Xcode with project](readme_assets/pic1.png)
+![Picture of Xcode with project](resources/pic1.png)
 
 5. If you aren't able to find the .dylib in the regular search you can look elsewhere.
 
-![Picture of Xcode with project showing the Add Other button](readme_assets/pic2.png)
+![Picture of Xcode with project showing the Add Other button](resources/pic2.png)
 
-5. Click on the `Add Other...` button and then type `('CMD' + 'Shift' + 'G')` which will take you to the 
+5. Click on the `Add Other...` button and then type `('CMD' + 'Shift' + 'G')` which will take you to the
 `Go to folder` search bar.  Type `/user/lib/` and look fo the `.dylib` files here.
 
-![Picture of Xcode with project showing the go to folder search bar](readme_assets/pic3.png)
+![Picture of Xcode with project showing the go to folder search bar](resources/pic3.png)
 
 Finally you can build the project by simply clicking on the 'Play' button located at the top left hand side
 of the xcode project window.
 
-![Picture of Xcode with project play button](readme_assets/pic4.png)
+![Picture of Xcode with project play button](resources/pic4.png)
 
 ...
 
@@ -227,10 +227,10 @@ react-native run-ios
 - [x] Install dependencies
 - [x] Give up on WebRTC
 - [x] Rename WebRTCQuickBlox -> RN-QuickbloxVideo
-- [ ] Install Quickblox Android SDK
-- [ ] Install Quickblox iOS SDK
-- [ ] ...
-- [ ] Create documentation and usage
-- [ ] Update README.md (make it fancy)
+- [x] Create documentation and usage
+- [x] Install Quickblox Android SDK
+- [x] Install Quickblox iOS SDK
+- [ ] Add button
+- [ ] Implement quickblox
 - [ ] Add usage/demo gif
 - [ ] Setup demo tutorial
