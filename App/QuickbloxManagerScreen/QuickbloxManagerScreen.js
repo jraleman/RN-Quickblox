@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-export default class HomeScreen extends React.Component {
+export default class QuickbloxManagerScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
