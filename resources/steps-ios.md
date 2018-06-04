@@ -1,6 +1,6 @@
 # RN-Quickblox
 
-## Android Installation
+## iOS Installation
 
 ### Steps
 
@@ -45,18 +45,18 @@ VideoToolbox.framework
 Accelerate.framework
 ```
 
-![Picture of Xcode with project](pic1.png)
+![Picture of Xcode with project](steps-assets/pic1.png)
 
 5. If you aren't able to find the .dylib in the regular search you can look elsewhere.
 
-![Picture of Xcode with project showing the Add Other button](pic2.png)
+![Picture of Xcode with project showing the Add Other button](steps-assets/pic2.png)
 
 6. Click on the `Add Other...` button and then type `('CMD' + 'Shift' + 'G')` which will take you to the
 `Go to folder` search bar.  Type `/user/lib/` and look fo the `.dylib` files here.
 
-![Picture of Xcode with project showing the go to folder search bar](pic3.png)
+![Picture of Xcode with project showing the go to folder search bar](steps-assets/pic3.png)
 
 7. Finally you can build the project by simply clicking on the 'Play' button located at the top left hand side
 of the xcode project window.
 
-![Picture of Xcode with project play button](pic4.png)
+![Picture of Xcode with project play button](steps-assets/pic4.png)
