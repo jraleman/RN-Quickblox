@@ -13,34 +13,50 @@ import QuickbloxManager from '../QuickbloxManager';
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
+    this._callSuccess = this.props.callSuccess;
     this.state = {
+      userName: 'dat.tran',
+      password: '12345678',
       user: 'null',
       users: []
     };
-    this.quickbloxManager = new QuickbloxManager()
+    this.quickbloxManager = new QuickbloxManager();
   }
   componentDidMount() {
+    this.login();
     this.quickbloxManager.getUsers(users => {
       if (typeof (users) === 'string')
         this.setState({users: JSON.parse(users)})
       else if (typeof (users) === 'object' && Array.isArray(users))
         this.setState({users: users})
-    })
+    });
   }
-  btnHandler() {
+  login = () => {
+    this.setState({waiting: true})
+    this.quickbloxManager.login(this.state.userName, this.state.password, (qbId) => {
+      this.setState({waiting: false, user: qbId})
+    });
+  }
+  btnHandler () {
     alert("It works!");
+    // this.quickbloxManager.callUsers([item.id], 1, 'Dat Tran', 'https://qph.ec.quoracdn.net/main-qimg-7ea75331d55c74f7e3c0815cca3e8b4a-c');
+    // this.props.callSuccess();
   }
   renderListItem(item) {
-    return <TouchableOpacity onPress={() => {
-      this.quickbloxManager.callUsers([item.id], 1, 'Dat Tran', 'https://qph.ec.quoracdn.net/main-qimg-7ea75331d55c74f7e3c0815cca3e8b4a-c')
-      this.props.callSuccess()
-    }}>
-      <View style={{flexDirection: 'row', height: 44, alignItems: 'center'}}>
-        <Text>{item.id}</Text>
-        <View style={{width: 40}}/>
-        <Text>{item.login}</Text>
-      </View>
-    </TouchableOpacity>
+    return (
+      <TouchableOpacity
+        onPress={ () => {
+          alert("It works!");
+          this.quickbloxManager.callUsers([item.id], 1, 'Dat Tran', 'https://qph.ec.quoracdn.net/main-qimg-7ea75331d55c74f7e3c0815cca3e8b4a-c');
+          this.props.callSuccess();
+        }}>
+        <View style={{flexDirection: 'row', height: 44, alignItems: 'center'}}>
+          <Text>{ item.id }</Text>
+          <View style={{width: 40}}/>
+          <Text>{ item.login }</Text>
+        </View>
+      </TouchableOpacity>
+    );
   }
   render() {
     return (
@@ -48,10 +64,10 @@ export default class HomeScreen extends React.Component {
 
         <FlatList
           keyboardShouldPersistTaps='always'
-          style={{backgroundColor: 'white'}}
-          data={this.state.users}
-          keyExtractor={(item, index) => index}
-          renderItem={({item, index}) => this.renderListItem(item, index)}
+          style={{ backgroundColor: 'white' }}
+          data={ this.state.users }
+          keyExtractor={ (item, index) => index }
+          renderItem={ ({ item, index }) => this.renderListItem(item, index) }
         />
       </View>
     );

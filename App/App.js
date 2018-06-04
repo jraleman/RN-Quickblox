@@ -8,6 +8,7 @@ import {
 import QuickbloxManager from './QuickbloxManager'
 
 import HomeScreen from './HomeScreen';
+import VideoCallScreen from './VideoCallScreen';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +28,11 @@ export default class App extends React.Component {
   render () {
     return (
       <View style={{ flex: 1 }}>
-         <HomeScreen />
+        {
+          !this.state.calling ?
+          <HomeScreen callSuccess={() => this.setState({calling: true})} />
+          : <VideoCallScreen />
+        }
       </View>
     );
   }
