@@ -16,10 +16,10 @@ export const USER_REJECT_CALL = 'USER_REJECT_CALL'
 export const SESSION_DID_CLOSE = 'SESSION_DID_CLOSE'
 export const DID_RECEIVE_CALL_SESSION = 'DID_RECEIVE_CALL_SESSION'
 
-const APP_ID = '44519';
-const AUTH_KEY = 'YqHTqrJPDkAzht3';
-const AUTH_SECRET = 'fgYy8K3hL6LKHaS';
-const ACCOUNT_KEY = '6XDmKdXBfwPuJsWv9Fxp';
+const APP_ID = '69708';
+const AUTH_KEY = 'pUrxJRZtABJA7Pd';
+const AUTH_SECRET = 'nphO9yH49CCQB44';
+const ACCOUNT_KEY = '5GhswJXzgzpzF3ycZkmF';
 
 const QuickbloxModule = new NativeEventEmitter(RNQuickblox);
 

@@ -64,6 +64,7 @@ react-native run-ios
 - [x] Install Quickblox Android SDK
 - [x] Install Quickblox iOS SDK
 - [x] Integrate QuickbloxManager
-- [ ] Replace default Quickblox user
+- [x] Add VideoScreen
+- [x] Replace default Quickblox endpoints
 - [ ] Add usage/demo gif
 - [ ] Setup demo tutorial

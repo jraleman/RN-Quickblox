@@ -10,13 +10,17 @@ import styles from './styles';
 
 import QuickbloxManager from '../QuickbloxManager';
 
+const CALL_ID = 1
+const REAL_NAME = 'John Doe'
+const AVATAR = 'https://cdn.intra.42.fr/users/anieto.jpg'
+
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     this._callSuccess = this.props.callSuccess;
     this.state = {
-      userName: 'dat.tran',
-      password: '12345678',
+      userName: 'johndoe420',
+      password: '42424242',
       user: 'null',
       users: []
     };
@@ -47,8 +51,8 @@ export default class HomeScreen extends React.Component {
       <TouchableOpacity
         onPress={ () => {
           alert("It works!");
-          this.quickbloxManager.callUsers([item.id], 1, 'Dat Tran', 'https://qph.ec.quoracdn.net/main-qimg-7ea75331d55c74f7e3c0815cca3e8b4a-c');
-          this.props.callSuccess();
+          this.quickbloxManager.callUsers([item.id], CALL_ID, REAL_NAME, AVATAR);
+          this._callSuccess();
         }}>
         <View style={{flexDirection: 'row', height: 44, alignItems: 'center'}}>
           <Text>{ item.id }</Text>
